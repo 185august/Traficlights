@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #divLights {
+        width: 210px;
+        height: 730px;
+        margin: 20px;
+        background-color: lightgray;
+        border-radius: 50px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 30px;
+      }
+      .red {
+        background-color: red;
+        opacity: 10%;
+      }
+      .yellow {
+        background-color: yellow;
+        opacity: 10%;
+      }
+      .green {
+        background-color: green;
+        opacity: 10%;
+      }
+      .active {
+        opacity: 100%;
+      }
+      .circle {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body onload="automatic()">
+    <div id="divLights">
+      <div id="red" class="red circle"></div>
+      <div id="yellow" class="yellow circle"></div>
+      <div id="green" class="green circle"></div>
+    </div>
+
+    <button onclick="activeColor('green', 'yellow', 'yellow', 'red', 'red') ">
+      Red
+    </button>
+    <button onclick="activeColor('green', 'red', 'red', 'yellow', 'yellow') ">
+      Yellow
+    </button>
+    <button onclick="activeColor('yellow', 'red', 'red', 'green', 'green') ">
+      Green
+    </button>
+
+    <script>
+      function activeColor(id1,id2,id3,id4,id5,) /* funksjon for å legge til eller fjerne active class fra de forskjellige frage id'ene */ {
+        document.getElementById(id1).classList.remove("active");
+        document.getElementById(id2).classList.remove("active");
+        document.getElementById(id3).classList.remove("active");
+        document.getElementById(id4).classList.add("active");
+        document.getElementById(id5).classList.add("active");
+      }
+
+      function selectRed() {
+        activeColor("green", "yellow", "yellow", "red", "red");
+      }
+
+      function selectYellow() {
+        activeColor("green", "red", "red", "yellow", "yellow");
+      }
+        
+      function selectGreen() {
+        activeColor("red", "yellow", "yellow", "green", "green");
+      }
+      function automatic() {
+        const color1 = setTimeout(() => {
+          selectRed();
+        }, 1000);
+        const color2 = setTimeout(() => {
+          selectYellow();
+        }, 2000);
+        const color3 = setTimeout(() => {
+          selectGreen();
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
