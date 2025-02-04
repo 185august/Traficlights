@@ -1,0 +1,35 @@
+#traficLights {
+    width: 210px;
+    height: 730px;
+    margin: 20px;
+    background-color: lightgray;
+    border-radius: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+  }
+
+  .greenLight {
+    background-color: gray;
+  }
+
+  .yellowLight {
+    background-color: gray;
+  }
+
+  .redLight {
+    background-color: gray;
+  }
+
+  .circle2 {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: gray;
+  }
+
+  .active {
+    opacity: 100%;
+  }
